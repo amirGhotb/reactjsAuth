@@ -3,6 +3,7 @@ export default {
         login: '/login',
         register: '/register',
         verify: '/verify',
+        forgetPassword: '/forget',
     },
     panel: {
         home: '/panel/'

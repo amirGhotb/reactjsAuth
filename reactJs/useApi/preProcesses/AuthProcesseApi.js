@@ -17,9 +17,14 @@ const apiAddress = [
         method: 'post',
     },
     {
-        name: 'init',
-        url: 'sanctum/csrf-cookie',
-        method: 'get',
+        name: 'sendCode',
+        url: 'send-code',
+        method: 'post',
+    },
+    {
+        name: 'changePassword',
+        url: 'change-password',
+        method: 'post',
     },
 ];
 
@@ -36,7 +41,14 @@ function postProcessAuth(urlName, data) {
                 apiToken: data.data.apiToken,
             };
         case 'register':
+        case 'sendCode':
             return data.data.status;
+        case 'changePassword':
+            return {
+                status: data.data.status,
+                code: data.data.code,
+                apiToken: data.data.apiToken,
+            }
     }
 }
 

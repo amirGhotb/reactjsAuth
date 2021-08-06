@@ -13,6 +13,7 @@ import Login from "./auth/Login";
 import routes from "./routes";
 import Register from "./auth/Register";
 import Verify from "./auth/Verify";
+import ForgetPassword from "./auth/ForgetPassword";
 
 const initializeUser = {
     user: null,
@@ -46,6 +47,7 @@ function App() {
             <Route path={routes.auth.login}><Login/></Route>
             <Route path={routes.auth.register}><Register/></Route>
             <Route path={routes.auth.verify}><Verify/></Route>
+            <Route path={routes.auth.forgetPassword}><ForgetPassword/></Route>
         </Router>
     </AuthContext.Provider> : null
 }
